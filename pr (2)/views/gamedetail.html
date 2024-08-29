@@ -1,0 +1,62 @@
+<style>
+    #img{
+        width: 800px;
+        height: 550px;
+    }
+</style>
+<div class="container" style="margin-top:30px">
+    <div class="row">
+        <div class="col-sm-12">
+                <div class="container-fluid">
+                    <h2>Detail</h2>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <img src="/img/{{game.img}}" id = "img" class="img-thumbnail" alt="">
+                        </div>
+                        <div class="col-sm-4">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Game Information</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>상품 이름 : {{game.name}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>상품가격  : {{game.price}} \</td>
+                                    </tr>
+                                    <tr>
+                                        <td>상품 등록일 : {{game.gdate}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>장르 : {{game.type}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>개발자 : {{game.developer}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>배급사 : {{game.distri}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            {% if loginid %}
+                            <form action="/addcart" method="POST">
+                                <input type="hidden" name = "userid" value="{{loginid}}">
+                                <input type="hidden" name = "itemid" value="{{game.id}}">
+                                <button type="submit" class="btn btn-primary">ADD</button>
+                            </form>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                </div>
+        </div>
+    </div>
+</div>

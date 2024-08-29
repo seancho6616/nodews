@@ -1,0 +1,28 @@
+<style>
+  #img{
+    width: 100px;
+    height: 100px;
+  }
+</style>
+
+<div class="container">
+  <h1>Deal</h1>     
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th></th>
+        <th>user</th>
+        <th>게임</th>
+      </tr>
+    </thead>
+    {% for g in list %}
+    <tbody>
+        <td><img src="/img/{{g.img}}" id="img" ></td>
+        <td><br>{{g.userid}}</td>
+        <td><br>{{g.gameName}}</td>
+    </tbody>
+    {% endfor %}
+  </table>
+</div>
+
+
